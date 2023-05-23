@@ -57,7 +57,7 @@ const onContatoClick = (contato) => {
     <div className={styles.container}>
        <Header title={distrito.nome} subTitle={categoria.nome} showBackIcon/>
        <SearchField 
-         placeholder='Digite a contato'
+         placeholder='Pesquisar'
          value={searchText}
          onChangeText={setSearchText}
        />

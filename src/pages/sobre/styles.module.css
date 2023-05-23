@@ -10,19 +10,6 @@
     
 }
 
-.sloganText {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    color: var(--primaryColor);
-}
-
-.avisoText {
-    margin-top: 10px;
-    font-size: 16px;
-    color: white;
-}
-
 .body {
     width: 350px;
     display: flex;
@@ -33,9 +20,10 @@
     justify-content: center;
 }
 
-.aboutIcon {
-    color: white;
-    position: absolute;
-    top: 15px;
-    right: 10px;
+.icone {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

@@ -6,6 +6,7 @@ import CityCard from '../../components/cityCard/CityCard';
 import { database } from '../../firebaseConfig';
 import { collection,onSnapshot, orderBy, query,getDocs} from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { GiInfo } from "react-icons/gi";
 
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
 }, []);
 
 const onCityClick = (cidade) => {
+
     navigate('/districts',{state: {cidade}});
   
 }
@@ -46,6 +48,7 @@ const onCityClick = (cidade) => {
   return (
     <div className={styles.container}>
        <Header title="Guia Bahia" subTitle="Extremo Sul" showBackIcon={false}/>
+       <GiInfo onClick={()=>navigate('/about')}className={styles.aboutIcon} size={40} /> 
        <p className={styles.sloganText}>A sua busca completa em um único lugar !</p>
        <p className={styles.avisoText}>{aviso}</p>
        <SearchField 

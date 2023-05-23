@@ -9,10 +9,13 @@ import { BsMegaphone } from "react-icons/bs";
 //import {FaInstagram } from "react-icons/fa";
 import { database } from '../../firebaseConfig';
 import { collection,query,getDocs } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Sobre = () => {
     const [telefone,setTelefone] = useState('');
+    const navigate = useNavigate();
 
 
     useEffect(()=>{
@@ -44,6 +47,10 @@ const Sobre = () => {
         const mensagem = "Tenho interesse em fazer parte do App Guia Bahia Extremo Sul.";
         window.location.replace(`whatsapp://send?phone=55${telefone}&text=${mensagem}`);
       }
+
+      const onSobreClick = () => {
+        navigate('/about-text');
+      }
       /*
       const onInstagramClick = () => {
         window.location.replace('https://instagram.com/guiabahiaextremosul?igshid=YmMyMTA2M2Y=');
@@ -66,7 +73,7 @@ const Sobre = () => {
             <MenuSobre icone={<GiHelp color='#ffffff'  size={24} />} label="Central de Ajuda" onClick={onAjudaClick}/>
             <MenuSobre icone={<BsMegaphone  color='#ffffff' size={24} />} label="Sugestões ou reclamações" onClick={onSugestoesClick}/>
             <MenuSobre icone={<BiUserPlus color='#ffffff' size={24} />} label="Novos Cadastros" onClick={onNovosCadastrosClick}/>
-            <MenuSobre icone={<GiInfo color='#ffffff' size={24} />} label="Sobre o Guia Bahia" onClick={()=>{}}/>
+            <MenuSobre icone={<GiInfo color='#ffffff' size={24} />} label="Sobre o Guia Bahia" onClick={onSobreClick}/>
             {/*<MenuSobre icone={<FaInstagram color='#ffffff' size={24} />} label="Visite nosso Instagram" onClick={onInstagramClick}/>*/}
            
             

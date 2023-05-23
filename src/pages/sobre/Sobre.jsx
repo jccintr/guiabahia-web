@@ -6,7 +6,7 @@ import MenuSobre from '../../components/menuSobre/MenuSobre';
 import { GiInfo,GiHelp } from "react-icons/gi";
 import { BiUserPlus } from "react-icons/bi";
 import { BsMegaphone } from "react-icons/bs";
-import {FaInstagram } from "react-icons/fa";
+//import {FaInstagram } from "react-icons/fa";
 import { database } from '../../firebaseConfig';
 import { collection,query,getDocs } from 'firebase/firestore';
 

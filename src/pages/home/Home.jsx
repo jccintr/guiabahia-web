@@ -5,12 +5,14 @@ import SearchField from '../../components/searchField/SearchField';
 import CityCard from '../../components/cityCard/CityCard';
 import { database } from '../../firebaseConfig';
 import { collection,onSnapshot, orderBy, query,getDocs} from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
   const [searchText,setSearchText] = useState('');
   const [aviso,setAviso] = useState('');
   const [cidades,setCidades] = useState([]);
+  const navigate = useNavigate();
 
 
   useEffect(()=>{
@@ -36,11 +38,14 @@ const Home = () => {
 
 }, []);
 
-
+const onCityClick = (cidade) => {
+    navigate('/districts',{state: {cidade}});
+  
+}
 
   return (
     <div className={styles.container}>
-       <Header title="Guia Bahia" subTitle="Extremo Sul"/>
+       <Header title="Guia Bahia" subTitle="Extremo Sul" showBackIcon={false}/>
        <p className={styles.sloganText}>A sua busca completa em um único lugar !</p>
        <p className={styles.avisoText}>{aviso}</p>
        <SearchField 
@@ -51,7 +56,7 @@ const Home = () => {
        
        <div className={styles.body}>
         
-       {cidades.filter((cidade)=>cidade.nome.toUpperCase().includes(searchText.toUpperCase())).map(cidade => <CityCard key={cidade.id} cidade={cidade.nome}/>)}
+       {cidades.filter((cidade)=>cidade.nome.toUpperCase().includes(searchText.toUpperCase())).map(cidade => <CityCard onClick={()=>onCityClick(cidade)} key={cidade.id} cidade={cidade.nome}/>)}
         
        </div>
     </div>

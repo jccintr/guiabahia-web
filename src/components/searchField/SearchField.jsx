@@ -11,7 +11,6 @@ const SearchField = ({placeholder, value, onChangeText}) => {
          type="text"
          className={styles.input}
          placeholder={placeholder}
-         placeholderTextColor="#c1c1c1" 
          value={value}
          onChange={(e)=>onChangeText(e.target.value)}
          

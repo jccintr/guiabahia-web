@@ -4,9 +4,9 @@ import { IoLocation } from "react-icons/io5";
 import { HiChevronRight } from "react-icons/hi";
 import styles from "./styles.module.css";
 
-const CityCard = ({cidade}) => {
+const CityCard = ({cidade,onClick}) => {
   return (
-    <div className={styles.container}>
+    <div onClick={onClick} className={styles.container}>
 
        <IoLocation className={styles.icon} size={24} /> 
        <p className={styles.cityNameText}>{cidade}</p>

@@ -25,6 +25,7 @@ const Contacts = () => {
       setContatos(querySnapshot.docs.map(doc => ( {id: doc.id, nome: doc.data().nome, telefone: doc.data().telefone} )))
     })
     return unsuscribe;
+   // eslint-disable-next-line 
 }, []);
 
 useEffect(()=>{
@@ -54,7 +55,7 @@ const onContatoClick = (contato) => {
   
   return (
     <div className={styles.container}>
-       <Header title={cidade.nome} subTitle={distrito.nome} showBackIcon/>
+       <Header title={distrito.nome} subTitle={categoria.nome} showBackIcon/>
        <SearchField 
          placeholder='Digite a contato'
          value={searchText}

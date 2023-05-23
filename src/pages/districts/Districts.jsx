@@ -11,7 +11,8 @@ import DistrictCard from '../../components/districtCard/DistrictCard';
 const Districts = () => {
     const params = useLocation();
     const [distritos,setDistritos] = useState([]);
-    const [cidade,setCidade] = useState(params.state.cidade);
+    const cidade = params.state.cidade;
+    //const [cidade,setCidade] = useState(params.state.cidade);
     const navigate = useNavigate();
     
     useEffect(()=>{
